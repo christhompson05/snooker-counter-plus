@@ -2,7 +2,7 @@
 
 /***/ "./node_modules/raw-loader/index.js!./src/app/tab1/tab1.page.html":
 /*!***************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/tab1/tab1.page.html ***!
+  !*** ./node_modules/raw-loader!./src/app/play-tab/play-tab.page.html ***!
   \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -13,7 +13,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Tab One\
 
 /***/ "./src/app/tab1/tab1.module.ts":
 /*!*************************************!*\
-  !*** ./src/app/tab1/tab1.module.ts ***!
+  !*** ./src/app/play-tab/play-tab.module.ts ***!
   \*************************************/
 /*! exports provided: Tab1PageModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -27,7 +27,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _tab1_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tab1.page */ "./src/app/tab1/tab1.page.ts");
+/* harmony import */ var _tab1_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./play-tab.page */ "./src/app/tab1/tab1.page.ts");
 
 
 
@@ -58,7 +58,7 @@ var Tab1PageModule = /** @class */ (function () {
 
 /***/ "./src/app/tab1/tab1.page.scss":
 /*!*************************************!*\
-  !*** ./src/app/tab1/tab1.page.scss ***!
+  !*** ./src/app/play-tab/play-tab.page.scss ***!
   \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -69,9 +69,9 @@ module.exports = ".welcome-card img {\n  max-height: 35vh;\n  overflow: hidden;\
 
 /***/ "./src/app/tab1/tab1.page.ts":
 /*!***********************************!*\
-  !*** ./src/app/tab1/tab1.page.ts ***!
+  !*** ./src/app/play-tab/play-tab.page.ts ***!
   \***********************************/
-/*! exports provided: Tab1Page */
+/*! exports provided: PlayTab */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -86,9 +86,9 @@ var Tab1Page = /** @class */ (function () {
     }
     Tab1Page = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-tab1',
-            template: __webpack_require__(/*! raw-loader!./tab1.page.html */ "./node_modules/raw-loader/index.js!./src/app/tab1/tab1.page.html"),
-            styles: [__webpack_require__(/*! ./tab1.page.scss */ "./src/app/tab1/tab1.page.scss")]
+            selector: 'app-play-tab',
+            template: __webpack_require__(/*! raw-loader!./play-tab.page.html */ "./node_modules/raw-loader/index.js!./src/app/tab1/tab1.page.html"),
+            styles: [__webpack_require__(/*! ./play-tab.page.scss */ "./src/app/tab1/tab1.page.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], Tab1Page);
@@ -100,4 +100,4 @@ var Tab1Page = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=tab1-tab1-module-es5.js.map
+//# sourceMappingURL=play-tab-play-tab-module-es5.js.map

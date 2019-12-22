@@ -2,7 +2,7 @@
 
 /***/ "./node_modules/raw-loader/index.js!./src/app/tab3/tab3.page.html":
 /*!***************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/tab3/tab3.page.html ***!
+  !*** ./node_modules/raw-loader!./src/app/records-tab/records-tab.page.html ***!
   \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -13,7 +13,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Tab Thre
 
 /***/ "./src/app/tab3/tab3.module.ts":
 /*!*************************************!*\
-  !*** ./src/app/tab3/tab3.module.ts ***!
+  !*** ./src/app/records-tab/records-tab.module.ts ***!
   \*************************************/
 /*! exports provided: Tab3PageModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -27,7 +27,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _tab3_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tab3.page */ "./src/app/tab3/tab3.page.ts");
+/* harmony import */ var _tab3_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./records-tab.page */ "./src/app/tab3/tab3.page.ts");
 
 
 
@@ -55,7 +55,7 @@ Tab3PageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ "./src/app/tab3/tab3.page.scss":
 /*!*************************************!*\
-  !*** ./src/app/tab3/tab3.page.scss ***!
+  !*** ./src/app/records-tab/records-tab.page.scss ***!
   \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -66,9 +66,9 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 
 /***/ "./src/app/tab3/tab3.page.ts":
 /*!***********************************!*\
-  !*** ./src/app/tab3/tab3.page.ts ***!
+  !*** ./src/app/records-tab/records-tab.page.ts ***!
   \***********************************/
-/*! exports provided: Tab3Page */
+/*! exports provided: RecordsTab */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83,9 +83,9 @@ let Tab3Page = class Tab3Page {
 };
 Tab3Page = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-tab3',
-        template: __webpack_require__(/*! raw-loader!./tab3.page.html */ "./node_modules/raw-loader/index.js!./src/app/tab3/tab3.page.html"),
-        styles: [__webpack_require__(/*! ./tab3.page.scss */ "./src/app/tab3/tab3.page.scss")]
+        selector: 'app-records-tab',
+        template: __webpack_require__(/*! raw-loader!./records-tab.page.html */ "./node_modules/raw-loader/index.js!./src/app/tab3/tab3.page.html"),
+        styles: [__webpack_require__(/*! ./records-tab.page.scss */ "./src/app/tab3/tab3.page.scss")]
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
 ], Tab3Page);
@@ -95,4 +95,4 @@ Tab3Page = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /***/ })
 
 }]);
-//# sourceMappingURL=tab3-tab3-module-es2015.js.map
+//# sourceMappingURL=records-tab-records-tab-module-es2015.js.map

@@ -2,7 +2,7 @@
 
 /***/ "./node_modules/raw-loader/index.js!./src/app/tab2/tab2.page.html":
 /*!***************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/tab2/tab2.page.html ***!
+  !*** ./node_modules/raw-loader!./src/app/rules-tab/rules-tab.page.html ***!
   \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -13,7 +13,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Tab Two\
 
 /***/ "./src/app/tab2/tab2.module.ts":
 /*!*************************************!*\
-  !*** ./src/app/tab2/tab2.module.ts ***!
+  !*** ./src/app/rules-tab/rules-tab.module.ts ***!
   \*************************************/
 /*! exports provided: Tab2PageModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -27,7 +27,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _tab2_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tab2.page */ "./src/app/tab2/tab2.page.ts");
+/* harmony import */ var _tab2_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./rules-tab.page */ "./src/app/tab2/tab2.page.ts");
 
 
 
@@ -58,7 +58,7 @@ var Tab2PageModule = /** @class */ (function () {
 
 /***/ "./src/app/tab2/tab2.page.scss":
 /*!*************************************!*\
-  !*** ./src/app/tab2/tab2.page.scss ***!
+  !*** ./src/app/rules-tab/rules-tab.page.scss ***!
   \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -69,9 +69,9 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 
 /***/ "./src/app/tab2/tab2.page.ts":
 /*!***********************************!*\
-  !*** ./src/app/tab2/tab2.page.ts ***!
+  !*** ./src/app/rules-tab/rules-tab.page.ts ***!
   \***********************************/
-/*! exports provided: Tab2Page */
+/*! exports provided: RulesTab */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -86,9 +86,9 @@ var Tab2Page = /** @class */ (function () {
     }
     Tab2Page = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-tab2',
-            template: __webpack_require__(/*! raw-loader!./tab2.page.html */ "./node_modules/raw-loader/index.js!./src/app/tab2/tab2.page.html"),
-            styles: [__webpack_require__(/*! ./tab2.page.scss */ "./src/app/tab2/tab2.page.scss")]
+            selector: 'app-rules-tab',
+            template: __webpack_require__(/*! raw-loader!./rules-tab.page.html */ "./node_modules/raw-loader/index.js!./src/app/tab2/tab2.page.html"),
+            styles: [__webpack_require__(/*! ./rules-tab.page.scss */ "./src/app/tab2/tab2.page.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], Tab2Page);
@@ -100,4 +100,4 @@ var Tab2Page = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=tab2-tab2-module-es5.js.map
+//# sourceMappingURL=rules-tab-rules-tab-module-es5.js.map

@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Official Rules
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Goal of the Game</ion-list-header>
+    <ion-item lines="none">
+      <ion-text>
+        Snooker is played with fifteen object balls that are not numbered and are solid red (called reds), six object balls of other colors that are not numbered (called colors in snooker) and a cue ball (called the white ball).
+        The aim of snooker is to pocket the balls legally according to the rules and to score a greater number of points than the opponent.
+        Point values for object balls: red-1, yellow-2, green-3, brown-4, blue-5, pink-6, black-7.
+      </ion-text>
+    </ion-item>
+
+    <iframe width="100%" height="auto" [src]="trustedLinkUrl" frameborder="0" allowfullscreen></iframe>
+
+    <ion-list-header>On to the Break</ion-list-header>
+    <ion-item lines="none">
+      <ion-text>
+        The game of Snooker begins with the cue ball in hand in the Half Circle (so the starting player can place the cue ball anywhere inside the Half Circle).
+      </ion-text>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-text>
+        The rules for the opening break are the same as when one of the players gets the right to strike.
+      </ion-text>
+    </ion-item>
+
+    <ion-list-header>Rules of the Game</ion-list-header>
+    <ion-item lines="none">
+      <ion-text>
+        A player who gets the right to strike has to hit one of the red ball first.
+        Each shot has to be completed in 60 seconds, otherwise a foul is called.
+      </ion-text>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div>
+        <ion-text>
+          A strike, when the next legal object is a red ball, is legal when:
+        </ion-text>
+        <ul>
+          <li>If no red ball is potted then the opposing player is next.</li>
+          <li>When a red ball is potted then the player gets as many points as the number of red balls he has potted. The striker's next legal object is a colored snooker ball (see next point rules).</li>
+        </ul>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div>
+        <ion-text>
+          A strike, when the next legal object is a color ball, is legal when:
+        </ion-text>
+        <ul>
+          <li>The white ball is not potted.</li>
+          <li>If there are still red balls on the table then one of the colored balls is hit by the white ball first.</li>
+          <li>If there are no more red balls on the table then the colored ball with the lowest points is hit first.</li>
+          <li>Only the ball that was hit first by the white ball is be potted.
+          </li>
+        </ul>
+        <ion-text>
+          Otherwise the strike is a foul.
+        </ion-text>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div>
+        <ion-text>
+          When the strike on the colored ball is legal:
+        </ion-text>
+        <ul>
+          <li>If no ball is potted then the opposing player is next.</li>
+          <li>When a colored ball is potted then the player's points increase by the point value of the potted colored ball. The striker's next legal object is a red ball. If there are no more red balls on the table, the next legal object is the ball with the lowest points.</li>
+        </ul>
+      </div>
+    </ion-item>
+
+    <ion-list-header>Fouls</ion-list-header>
+    <ion-item lines="none">
+      <div>
+        <ion-text>
+          If a hit is a foul then the other player gets penalty points:
+        </ion-text>
+        <ul>
+          <li>4 points if the white ball is potted.</li>
+          <li>4 points if time limit is exceeded (60 seconds/shot)</li>
+          <li>If the white hits the wrong ball first then the value of this ball.</li>
+          <li>If the wrong ball is potted first then the value of this ball.</li>
+        </ul>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div>
+        <ion-text>
+          When a hit results in more fouls then the opposing player gets the points of foul with the highest value.
+          Penalty points have a minimal value of 4.
+        </ion-text>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div>
+        <ion-text>
+          After committing a foul the incoming player may:
+        </ion-text>
+        <ul>
+          <li>play the ball(s) as they lie.</li>
+          <li>request to pass the shot and let the offending player play the stroke again (without returning to the original position).</li>
+        </ul>
+      </div>
+    </ion-item>
+
+    <ion-list-header>Game Over Rules</ion-list-header>
+    <ion-item lines="none">
+      <div>
+        <ion-text>
+          When the only ball left on the table is the black one and:
+        </ion-text>
+        <ul>
+          <li>The black ball is potted by the next legal shot.</li>
+          <li>The next hit is a foul.</li>
+        </ul>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none">
+      <div>
+        <ion-text>
+          <strong>Playoff: </strong>
+          If the scores are equal after potting the last ball, the black ball is respotted and the player on plays again from the D. The first foul or pot ends the game.
+        </ion-text>
+      </div>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
