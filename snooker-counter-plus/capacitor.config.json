@@ -1,0 +1,8 @@
+{
+  "appId": "com.christhompson05.snooker",
+  "appName": "Snooker Counter Plus",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

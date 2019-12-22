@@ -1,0 +1,7 @@
+{
+  "name": "snooker-counter-plus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
