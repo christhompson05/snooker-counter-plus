@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Plugins } from "@capacitor/core";
-import {PlayerModel} from "../models/player.model";
+import { CameraResultType, CameraSource, Capacitor, FilesystemDirectory, Plugins } from "@capacitor/core";
+import { PlayerModel } from "../models/player.model";
 
-const { Storage } = Plugins;
+const { Camera, Filesystem, Storage } = Plugins;
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class PlayerService {
     return await Storage.set({ key: `player/${playerModel.id}`, value: JSON.stringify(playerModel) });
   }
 
-  async getPlayers() {
+  async getPlayers(): Promise<PlayerModel[]> {
     if (this.playerCache.length > 0) {
       return this.playerCache;
     }
@@ -35,5 +35,34 @@ export class PlayerService {
     }
     this.playerCache.push(...players);
     return players;
+  }
+
+  async setImage(): Promise<string> {
+    const originalPhoto = await Camera.getPhoto({
+      source: CameraSource.Prompt,
+      saveToGallery: true,
+      allowEditing: false,
+      resultType: CameraResultType.Uri,
+    });
+
+    const photoInTempStorage = await Filesystem.readFile({ path: originalPhoto.path });
+
+    let date = new Date(),
+        time = date.getTime(),
+        fileName = time + ".jpeg";
+
+    await Filesystem.writeFile({
+      data: photoInTempStorage.data,
+      path: fileName,
+      directory: FilesystemDirectory.Data
+    });
+
+    const finalPhotoUri = await Filesystem.getUri({
+      directory: FilesystemDirectory.Data,
+      path: fileName
+    });
+
+    const photoPath = Capacitor.convertFileSrc(finalPhotoUri.uri);
+    return photoPath;
   }
 }

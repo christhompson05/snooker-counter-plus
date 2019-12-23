@@ -445,6 +445,17 @@ module.exports = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-ap
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/modals/add-player/add-player.modal.html":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/modals/add-player/add-player.modal.html ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-content>\n  <div class=\"form-container\">\n    <h1>Add Player</h1>\n\n    <ion-avatar *ngIf=\"imageUrl; else imagePlaceholder\">\n      <ion-img [src]=\"imageUrl\"></ion-img>\n    </ion-avatar>\n\n    <ng-template #imagePlaceholder>\n      <div class=\"icon-container\" (click)=\"addOrEditImage()\">\n        <ion-icon name=\"person\"></ion-icon>\n      </div>\n    </ng-template>\n\n    <ion-item>\n      <ion-label position=\"floating\">Name</ion-label>\n      <ion-input [formControl]=\"nameControl\"></ion-input>\n    </ion-item>\n\n    <ion-button [disabled]=\"!name || !name.length\" (click)=\"addPlayer()\">Add Player</ion-button>\n  </div>\n</ion-content>"
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -506,31 +517,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @capacitor/core */ "./node_modules/@capacitor/core/dist/esm/index.js");
 
 
 
 
-
+const { SplashScreen, StatusBar } = _capacitor_core__WEBPACK_IMPORTED_MODULE_3__["Plugins"];
 let AppComponent = class AppComponent {
-    constructor(platform, splashScreen, statusBar) {
+    constructor(platform) {
         this.platform = platform;
-        this.splashScreen = splashScreen;
-        this.statusBar = statusBar;
         this.initializeApp();
     }
     initializeApp() {
-        this.platform.ready().then(() => {
-            this.statusBar.styleDefault();
-            this.splashScreen.hide();
-        });
+        this.platform.ready().then(() => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            yield StatusBar.hide();
+            yield SplashScreen.hide();
+        }));
     }
 };
 AppComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] },
-    { type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"] },
-    { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] }
 ];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -538,9 +544,7 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
         styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"],
-        _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"],
-        _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"]])
 ], AppComponent);
 
 
@@ -562,10 +566,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _modals_add_player_add_player_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modals/add-player/add-player.modal */ "./src/app/modals/add-player/add-player.modal.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 
 
 
@@ -579,17 +583,209 @@ let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
-        entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"]],
+        declarations: [
+            _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+            _modals_add_player_add_player_modal__WEBPACK_IMPORTED_MODULE_7__["AddPlayerModal"]
+        ],
+        entryComponents: [
+            _modals_add_player_add_player_modal__WEBPACK_IMPORTED_MODULE_7__["AddPlayerModal"]
+        ],
+        imports: [
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"]
+        ],
         providers: [
-            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
-            _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
         ],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/modals/add-player/add-player.modal.scss":
+/*!*********************************************************!*\
+  !*** ./src/app/modals/add-player/add-player.modal.scss ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ":host .form-container {\n  height: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  -webkit-box-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n:host .form-container h1 {\n  margin-bottom: 15vh;\n}\n:host .form-container ion-item {\n  width: 75vw;\n}\n:host .form-container ion-button {\n  margin-top: 15vh;\n}\n:host .icon-container {\n  border: black solid 2px;\n  border-radius: 50%;\n  margin-bottom: 5vh;\n}\n:host .icon-container ion-icon {\n  font-size: 128px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jaHJpc3Rob21wc29uL0RldmVsb3Blci9Qcm9qZWN0cy9HZW5lcmF0aXYvc25vb2tlci1jb3VudGVyLXBsdXMvc25vb2tlci1jb3VudGVyLXBsdXMvc3JjL2FwcC9tb2RhbHMvYWRkLXBsYXllci9hZGQtcGxheWVyLm1vZGFsLnNjc3MiLCJzcmMvYXBwL21vZGFscy9hZGQtcGxheWVyL2FkZC1wbGF5ZXIubW9kYWwuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDRTtFQUNFLFlBQUE7RUFDQSxvQkFBQTtFQUFBLGFBQUE7RUFDQSw0QkFBQTtFQUFBLDZCQUFBO1VBQUEsc0JBQUE7RUFDQSx5QkFBQTtVQUFBLG1CQUFBO0VBQ0Esd0JBQUE7VUFBQSx1QkFBQTtBQ0FKO0FERUk7RUFDRSxtQkFBQTtBQ0FOO0FER0k7RUFDRSxXQUFBO0FDRE47QURJSTtFQUNFLGdCQUFBO0FDRk47QURNRTtFQUNFLHVCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtBQ0pKO0FETUk7RUFDRSxnQkFBQTtBQ0pOIiwiZmlsZSI6InNyYy9hcHAvbW9kYWxzL2FkZC1wbGF5ZXIvYWRkLXBsYXllci5tb2RhbC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICAuZm9ybS1jb250YWluZXIge1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcblxuICAgIGgxIHtcbiAgICAgIG1hcmdpbi1ib3R0b206IDE1dmg7XG4gICAgfVxuXG4gICAgaW9uLWl0ZW0ge1xuICAgICAgd2lkdGg6IDc1dnc7XG4gICAgfVxuXG4gICAgaW9uLWJ1dHRvbiB7XG4gICAgICBtYXJnaW4tdG9wOiAxNXZoO1xuICAgIH1cbiAgfVxuXG4gIC5pY29uLWNvbnRhaW5lciB7XG4gICAgYm9yZGVyOiBibGFjayBzb2xpZCAycHg7XG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAgIG1hcmdpbi1ib3R0b206IDV2aDtcblxuICAgIGlvbi1pY29uIHtcbiAgICAgIGZvbnQtc2l6ZTogMTI4cHg7XG4gICAgfVxuICB9XG59IiwiOmhvc3QgLmZvcm0tY29udGFpbmVyIHtcbiAgaGVpZ2h0OiAxMDAlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn1cbjpob3N0IC5mb3JtLWNvbnRhaW5lciBoMSB7XG4gIG1hcmdpbi1ib3R0b206IDE1dmg7XG59XG46aG9zdCAuZm9ybS1jb250YWluZXIgaW9uLWl0ZW0ge1xuICB3aWR0aDogNzV2dztcbn1cbjpob3N0IC5mb3JtLWNvbnRhaW5lciBpb24tYnV0dG9uIHtcbiAgbWFyZ2luLXRvcDogMTV2aDtcbn1cbjpob3N0IC5pY29uLWNvbnRhaW5lciB7XG4gIGJvcmRlcjogYmxhY2sgc29saWQgMnB4O1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIG1hcmdpbi1ib3R0b206IDV2aDtcbn1cbjpob3N0IC5pY29uLWNvbnRhaW5lciBpb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogMTI4cHg7XG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/modals/add-player/add-player.modal.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/modals/add-player/add-player.modal.ts ***!
+  \*******************************************************/
+/*! exports provided: AddPlayerModal */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPlayerModal", function() { return AddPlayerModal; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_player_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/player.service */ "./src/app/services/player.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+
+
+
+
+let AddPlayerModal = class AddPlayerModal {
+    constructor(playerService, modalCtrl) {
+        this.playerService = playerService;
+        this.modalCtrl = modalCtrl;
+        this.nameControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]();
+        this.subscription = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subscription"]();
+    }
+    ngOnInit() {
+        this.subscription.add(this.nameControl.valueChanges.subscribe((value) => {
+            this.name = value;
+        }));
+    }
+    addPlayer() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const player = yield this.playerService.addPlayer(this.name, this.imageUrl);
+            yield this.modalCtrl.dismiss(player);
+        });
+    }
+    addOrEditImage() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.imageUrl = yield this.playerService.setImage();
+            console.log(`image: `, this.imageUrl);
+        });
+    }
+};
+AddPlayerModal.ctorParameters = () => [
+    { type: _services_player_service__WEBPACK_IMPORTED_MODULE_2__["PlayerService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ModalController"] }
+];
+AddPlayerModal = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'add-player-modal',
+        template: __webpack_require__(/*! raw-loader!./add-player.modal.html */ "./node_modules/raw-loader/index.js!./src/app/modals/add-player/add-player.modal.html"),
+        styles: [__webpack_require__(/*! ./add-player.modal.scss */ "./src/app/modals/add-player/add-player.modal.scss")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_player_service__WEBPACK_IMPORTED_MODULE_2__["PlayerService"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ModalController"]])
+], AddPlayerModal);
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/player.model.ts":
+/*!****************************************!*\
+  !*** ./src/app/models/player.model.ts ***!
+  \****************************************/
+/*! exports provided: PlayerModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlayerModel", function() { return PlayerModel; });
+class PlayerModel {
+    constructor() {
+        this.id = undefined;
+        this.name = '';
+        this.image = '';
+        this.gamesPlayed = 0;
+        this.wins = 0;
+        this.losses = 0;
+        this.ties = 0;
+        this.points = 0;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/services/player.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/services/player.service.ts ***!
+  \********************************************/
+/*! exports provided: PlayerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlayerService", function() { return PlayerService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/core */ "./node_modules/@capacitor/core/dist/esm/index.js");
+/* harmony import */ var _models_player_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/player.model */ "./src/app/models/player.model.ts");
+
+
+
+
+const { Camera, Filesystem, Storage } = _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["Plugins"];
+let PlayerService = class PlayerService {
+    constructor() {
+        this.playerCache = [];
+    }
+    addPlayer(name, image) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const playerModel = new _models_player_model__WEBPACK_IMPORTED_MODULE_3__["PlayerModel"]();
+            playerModel.id = this.playerCache.length;
+            playerModel.name = name;
+            playerModel.image = image;
+            return yield Storage.set({ key: `player/${playerModel.id}`, value: JSON.stringify(playerModel) });
+        });
+    }
+    getPlayers() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            if (this.playerCache.length > 0) {
+                return this.playerCache;
+            }
+            const players = [];
+            const keys = yield Storage.keys();
+            for (const key of keys.keys) {
+                const player = yield Storage.get({ key: key });
+                players.push(JSON.parse(player.value));
+            }
+            this.playerCache.push(...players);
+            return players;
+        });
+    }
+    setImage() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const originalPhoto = yield Camera.getPhoto({
+                source: _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["CameraSource"].Prompt,
+                saveToGallery: true,
+                allowEditing: false,
+                resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["CameraResultType"].Uri,
+            });
+            const photoInTempStorage = yield Filesystem.readFile({ path: originalPhoto.path });
+            let date = new Date(), time = date.getTime(), fileName = time + ".jpeg";
+            yield Filesystem.writeFile({
+                data: photoInTempStorage.data,
+                path: fileName,
+                directory: _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["FilesystemDirectory"].Data
+            });
+            const finalPhotoUri = yield Filesystem.getUri({
+                directory: _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["FilesystemDirectory"].Data,
+                path: fileName
+            });
+            const photoPath = _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["Capacitor"].convertFileSrc(finalPhotoUri.uri);
+            return photoPath;
+        });
+    }
+};
+PlayerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], PlayerService);
 
 
 

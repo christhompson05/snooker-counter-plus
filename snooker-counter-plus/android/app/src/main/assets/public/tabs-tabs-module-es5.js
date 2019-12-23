@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"play-tab\">\n      <ion-icon name=\"flash\"></ion-icon>\n      <ion-label>Tab One</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"rules-tab\">\n      <ion-icon name=\"apps\"></ion-icon>\n      <ion-label>Tab Two</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"records-tab\">\n      <ion-icon name=\"send\"></ion-icon>\n      <ion-label>Tab Three</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n"
+module.exports = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"play-tab\">\n      <ion-icon name=\"trending-up\"></ion-icon>\n      <ion-label>Play</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"rules-tab\">\n      <ion-icon name=\"list-box\"></ion-icon>\n      <ion-label>Rules</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"records-tab\">\n      <ion-icon name=\"trophy\"></ion-icon>\n      <ion-label>Records</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n"
 
 /***/ }),
 
@@ -40,7 +40,7 @@ var routes = [
                     {
                         path: '',
                         loadChildren: function () {
-                            return __webpack_require__.e(/*! import() | play-tab-play-tab-module */ "tab1-tab1-module").then(__webpack_require__.bind(null, /*! ../play-tab/play-tab.module */ "./src/app/tab1/tab1.module.ts")).then(function (m) { return m.Tab1PageModule; });
+                            return __webpack_require__.e(/*! import() | play-tab-play-tab-module */ "play-tab-play-tab-module").then(__webpack_require__.bind(null, /*! ../play-tab/play-tab.module */ "./src/app/play-tab/play-tab.module.ts")).then(function (m) { return m.PlayTabModule; });
                         }
                     }
                 ]
@@ -51,7 +51,7 @@ var routes = [
                     {
                         path: '',
                         loadChildren: function () {
-                            return __webpack_require__.e(/*! import() | rules-tab-rules-tab-module */ "tab2-tab2-module").then(__webpack_require__.bind(null, /*! ../rules-tab/rules-tab.module */ "./src/app/tab2/tab2.module.ts")).then(function (m) { return m.Tab2PageModule; });
+                            return __webpack_require__.e(/*! import() | rules-tab-rules-tab-module */ "rules-tab-rules-tab-module").then(__webpack_require__.bind(null, /*! ../rules-tab/rules-tab.module */ "./src/app/rules-tab/rules-tab.module.ts")).then(function (m) { return m.RulesTabModule; });
                         }
                     }
                 ]
@@ -62,7 +62,7 @@ var routes = [
                     {
                         path: '',
                         loadChildren: function () {
-                            return __webpack_require__.e(/*! import() | records-tab-records-tab-module */ "tab3-tab3-module").then(__webpack_require__.bind(null, /*! ../records-tab/records-tab.module */ "./src/app/tab3/tab3.module.ts")).then(function (m) { return m.Tab3PageModule; });
+                            return __webpack_require__.e(/*! import() | records-tab-records-tab-module */ "records-tab-records-tab-module").then(__webpack_require__.bind(null, /*! ../records-tab/records-tab.module */ "./src/app/records-tab/records-tab.module.ts")).then(function (m) { return m.RecordsTabModule; });
                         }
                     }
                 ]

@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="form-container">
+    <h1>Add Player</h1>
+
+    <ion-avatar *ngIf="imageUrl; else imagePlaceholder">
+      <ion-img [src]="imageUrl"></ion-img>
+    </ion-avatar>
+
+    <ng-template #imagePlaceholder>
+      <div class="icon-container" (click)="addOrEditImage()">
+        <ion-icon name="person"></ion-icon>
+      </div>
+    </ng-template>
+
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input [formControl]="nameControl"></ion-input>
+    </ion-item>
+
+    <ion-button [disabled]="!name || !name.length" (click)="addPlayer()">Add Player</ion-button>
+  </div>
+</ion-content>

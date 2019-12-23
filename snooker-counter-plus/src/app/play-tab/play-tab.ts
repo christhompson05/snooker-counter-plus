@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {PlayerModel} from "../models/player.model";
 import {PlayerService} from "../services/player.service";
+import { ModalController } from '@ionic/angular';
+import { AddPlayerModal } from '../modals/add-player/add-player.modal';
 
 @Component({
   selector: 'app-tab1',
@@ -13,7 +15,8 @@ export class PlayTab implements OnInit {
   player2: PlayerModel;
 
   constructor(
-      private playerService: PlayerService
+      private playerService: PlayerService,
+      private modalCtrl: ModalController
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -21,7 +24,16 @@ export class PlayTab implements OnInit {
   }
 
   async addPlayer() {
-    console.log(`Adding Player: `);
+    const modal = await this.modalCtrl.create({
+      component: AddPlayerModal
+    });
+
+    await modal.present();
+
+    return modal.onDidDismiss()
+        .then((player) => {
+          return player.data;
+        });
   }
 
   async selectPlayer(playerNumber: number, event: any) {

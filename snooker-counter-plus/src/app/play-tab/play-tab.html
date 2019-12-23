@@ -11,7 +11,7 @@
     <ion-row>
       <ion-col>
         <ion-label>Player 1</ion-label>
-        <ion-select (ionChange)="selectPlayer(1, $event)">
+        <ion-select (ionChange)="selectPlayer(1, $event)" placeholder="Select Player 1">
           <ion-select-option *ngFor="let player of players" [value]="player.id">
             {{ player.name }}
           </ion-select-option>
@@ -22,7 +22,7 @@
       </ion-col>
       <ion-col>
         <ion-label>Player 2</ion-label>
-        <ion-select (ionChange)="selectPlayer(2, $event)">
+        <ion-select (ionChange)="selectPlayer(2, $event)" placeholder="Select Player 2">
           <ion-select-option *ngFor="let player of players" [value]="player.id">
             {{ player.name }}
           </ion-select-option>

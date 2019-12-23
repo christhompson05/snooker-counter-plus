@@ -1,7 +1,7 @@
 export class PlayerModel {
     id: number = undefined;
-    name: string = undefined;
-    image: string = undefined;
+    name: string = '';
+    image: string = '';
     gamesPlayed: number = 0;
     wins: number = 0;
     losses: number = 0;
