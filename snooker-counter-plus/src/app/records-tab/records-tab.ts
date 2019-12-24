@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { PlayerModel } from '../models/player.model';
 import { PlayerService } from '../services/player.service';
 
@@ -26,7 +26,7 @@ export class RecordsTab {
     });
   }
 
-  private async getRecords(): Promise<void> {
+  private getRecords(): void {
     this.mostWins = this.getMostWins();
     this.bestWinPct = this.getBestWinPct();
     this.mostPoints = this.getMostPoints();
@@ -44,6 +44,12 @@ export class RecordsTab {
 
   private getBestWinPct() {
     return this.players.sort((a, b) => {
+      if (a.gamesPlayed === 0) {
+        return 1;
+      }
+      if (b.gamesPlayed === 0) {
+        return -1;
+      }
       if ((a.wins / a.gamesPlayed) <= (b.wins / b.gamesPlayed)) {
         return 1;
       }
@@ -62,6 +68,12 @@ export class RecordsTab {
 
   private getBestPointsPerGame() {
     return this.players.sort((a, b) => {
+      if (a.gamesPlayed === 0) {
+        return 1;
+      }
+      if (b.gamesPlayed === 0) {
+        return -1;
+      }
       if ((a.points / a.gamesPlayed) <= (b.points / b.gamesPlayed)) {
         return 1;
       }
