@@ -1,4 +1,8 @@
 :root {
+  ion-content {
+    --background: var(--ion-color-light);
+  }
+
   ion-toolbar {
     text-align: center;
   }

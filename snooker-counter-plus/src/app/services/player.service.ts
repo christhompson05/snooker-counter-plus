@@ -18,7 +18,9 @@ export class PlayerService {
     playerModel.name = name;
     playerModel.image = image;
 
-    return await Storage.set({ key: `player/${playerModel.id}`, value: JSON.stringify(playerModel) });
+    this.playerCache.push(playerModel);
+    await Storage.set({ key: `player/${playerModel.id}`, value: JSON.stringify(playerModel) });
+    return playerModel;
   }
 
   async getPlayers(): Promise<PlayerModel[]> {
@@ -62,7 +64,17 @@ export class PlayerService {
       path: fileName
     });
 
-    const photoPath = Capacitor.convertFileSrc(finalPhotoUri.uri);
-    return photoPath;
+    return Capacitor.convertFileSrc(finalPhotoUri.uri);
+  }
+
+  async updateStats(player1: PlayerModel, player2: PlayerModel) {
+    const p1 = this.playerCache.find((p) => p.id === player1.id);
+    const p2 = this.playerCache.find((p) => p.id === player2.id);
+
+    this.playerCache.splice(this.playerCache.indexOf(p1), 1, player1);
+    this.playerCache.splice(this.playerCache.indexOf(p2), 1, player2);
+
+    await Storage.set({ key: `player/${player1.id}`, value: JSON.stringify(player1) });
+    await Storage.set({ key: `player/${player2.id}`, value: JSON.stringify(player2) });
   }
 }

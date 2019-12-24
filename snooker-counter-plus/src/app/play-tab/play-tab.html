@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab One
+      Snooker Counter
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
-    <ion-row>
+    <ion-row *ngIf="!gameOn">
       <ion-col>
         <ion-label>Player 1</ion-label>
         <ion-select (ionChange)="selectPlayer(1, $event)" placeholder="Select Player 1">
@@ -32,5 +32,70 @@
         </ion-select>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngIf="player1" class="player-card" [ngClass]="{ 'avatar-pulse': player1Striking && gameOn }">
+          <ion-card-title [ngStyle]="{ 'font-weight': player1Striking ? 'bolder' : 'bold' }">{{ player1.name }}</ion-card-title>
+          <ion-card-content>
+            <ion-avatar>
+              <ion-img [src]="player1.image"></ion-img>
+            </ion-avatar>
+            <ion-text>{{ gameOn ? 'Points: ' + player1Points : 'Wins: ' + player1.wins }}</ion-text>
+            <div class="ball-container">
+              <div *ngFor="let ball of player1Balls"
+                   class="ball"
+                   [ngStyle]="{ background: ball.color }"
+                   (click)="colorPotted(ball)"></div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card *ngIf="player2" class="player-card" [ngClass]="{ 'avatar-pulse': !player1Striking && gameOn }">
+          <ion-card-title [ngStyle]="{ 'font-weight' : !player1Striking ? 'bolder' : 'bold' }">{{ player2.name }}</ion-card-title>
+          <ion-card-content>
+            <ion-avatar>
+              <ion-img [src]="player2.image"></ion-img>
+            </ion-avatar>
+            <ion-text>{{ gameOn ? 'Points: ' + player2Points : 'Wins: ' + player2.wins }}</ion-text>
+            <div class="ball-container">
+              <div *ngFor="let ball of player2Balls"
+                   class="ball"
+                   [ngStyle]="{ background: ball.color }"
+                   (click)="colorPotted(ball)"></div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="player1 && player2 && (!gameOn || gameEnded)">
+      <ion-col size="4" offset="4">
+        <ion-button (click)="newGame()">Start Game</ion-button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
+
+  <div class="game-card" *ngIf="gameOn">
+    <div class="ball-container">
+      <ng-container *ngIf="(turn % 2 === 1) || redBallCount === 0; else redBallTemplate">
+        <div *ngFor="let ball of colorBalls"
+             class="ball"
+             [ngStyle]="{ background: ball.color }"
+             (click)="colorPotted(ball)"></div>
+      </ng-container>
+
+      <ng-template #redBallTemplate>
+        <div class="ball"
+             [ngStyle]="{ background: redBall.color }"
+             (click)="redPotted()">
+          {{ redBallCount }}
+        </div>
+      </ng-template>
+    </div>
+    <div class="button-container">
+      <ion-button (click)="changePlayer()">Miss</ion-button>
+      <ion-button (click)="foul()">Foul</ion-button>
+      <ion-button *ngIf="colorBalls.length <= 1" (click)="gameOver()">Game Over</ion-button>
+    </div>
+  </div>
 </ion-content>

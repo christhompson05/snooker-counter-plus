@@ -8,14 +8,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AddPlayerModal} from "./modals/add-player/add-player.modal";
 import { ReactiveFormsModule } from '@angular/forms';
+import { FoulModal } from './modals/foul/foul.modal';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddPlayerModal
+    AddPlayerModal,
+    FoulModal
   ],
   entryComponents: [
-    AddPlayerModal
+    AddPlayerModal,
+    FoulModal
   ],
   imports: [
     BrowserModule,

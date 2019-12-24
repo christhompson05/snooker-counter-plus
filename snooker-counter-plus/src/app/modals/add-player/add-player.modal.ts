@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PlayerService } from '../../services/player.service';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -9,7 +9,7 @@ import { ModalController } from '@ionic/angular';
   templateUrl: './add-player.modal.html',
   styleUrls: ['./add-player.modal.scss']
 })
-export class AddPlayerModal implements OnInit {
+export class AddPlayerModal implements OnInit, OnDestroy {
   name: string;
   nameControl: FormControl = new FormControl();
   imageUrl: string;
@@ -25,7 +25,11 @@ export class AddPlayerModal implements OnInit {
         this.nameControl.valueChanges.subscribe((value) => {
           this.name = value;
         })
-    )
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   async addPlayer() {
@@ -35,6 +39,5 @@ export class AddPlayerModal implements OnInit {
 
   async addOrEditImage() {
     this.imageUrl = await this.playerService.setImage();
-    console.log(`image: `, this.imageUrl);
   }
 }

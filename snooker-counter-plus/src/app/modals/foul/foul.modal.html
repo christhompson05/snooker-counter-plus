@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="form-container">
+    <h1>Foul Info</h1>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Foul Value</ion-label>
+      <ion-select [formControl]="foulValue">
+        <ion-select-option value="4">4</ion-select-option>
+        <ion-select-option value="5">5</ion-select-option>
+        <ion-select-option value="6">6</ion-select-option>
+        <ion-select-option value="7">7</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>Red ball potted?</ion-label>
+      <ion-checkbox [formControl]="redBall"></ion-checkbox>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>Switch player?</ion-label>
+      <ion-checkbox [formControl]="switchPlayer"></ion-checkbox>
+    </ion-item>
+
+    <ion-button [disabled]="!foulValue.value" (click)="submitFoul()">Submit Foul</ion-button>
+  </div>
+</ion-content>

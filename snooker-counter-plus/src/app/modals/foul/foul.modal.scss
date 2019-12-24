@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;;
+    justify-content: center;
 
     h1 {
       margin-bottom: 15vh;
@@ -14,23 +14,12 @@
       width: 75vw;
     }
 
-    ion-avatar {
-      width: 50vw;
-      height: 50vw;
-    }
-
     ion-button {
       margin-top: 15vh;
     }
   }
 
-  .icon-container {
-    border: black solid 2px;
-    border-radius: 50%;
-    margin-bottom: 5vh;
-
-    ion-icon {
-      font-size: 128px;
-    }
+  ion-item {
+    --background: var(--ion-color-light);
   }
 }
