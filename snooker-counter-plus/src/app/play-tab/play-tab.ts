@@ -4,7 +4,6 @@ import {PlayerService} from "../services/player.service";
 import { ModalController } from '@ionic/angular';
 import { AddPlayerModal } from '../modals/add-player/add-player.modal';
 import { BallModel } from '../models/ball.model';
-import { ancestorWhere } from 'tslint';
 import { FoulModal } from '../modals/foul/foul.modal';
 
 @Component({
@@ -111,6 +110,7 @@ export class PlayTab implements OnInit {
    **/
   newGame() {
     this.gameOn = true;
+    this.gameEnded = false;
     this.redBallCount = 15;
     this.player1Points = 0;
     this.player2Points = 0;

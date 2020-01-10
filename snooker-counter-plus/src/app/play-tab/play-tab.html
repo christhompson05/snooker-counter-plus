@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row *ngIf="!gameOn">
+    <ion-row *ngIf="!gameOn || gameEnded">
       <ion-col>
         <ion-label>Player 1</ion-label>
         <ion-select (ionChange)="selectPlayer(1, $event)" placeholder="Select Player 1">
@@ -93,9 +93,9 @@
       </ng-template>
     </div>
     <div class="button-container">
-      <ion-button (click)="changePlayer()">Miss</ion-button>
-      <ion-button (click)="foul()">Foul</ion-button>
-      <ion-button *ngIf="colorBalls.length <= 1" (click)="gameOver()">Game Over</ion-button>
+      <ion-button (click)="changePlayer()" [disabled]="gameEnded">Miss</ion-button>
+      <ion-button (click)="foul()" [disabled]="gameEnded">Foul</ion-button>
+      <ion-button *ngIf="colorBalls.length <= 1" (click)="gameOver()" [disabled]="gameEnded">Game Over</ion-button>
     </div>
   </div>
 </ion-content>
